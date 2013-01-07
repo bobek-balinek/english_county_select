@@ -1,2 +1,2 @@
 # Install hook code here
-puts "The list of English counties provided by this plugin may offend some users. Please review it carefully before you use it"
+puts "If you find some bits missing or spelled wrong, send me an email at bobak.art (at) gmail.com"

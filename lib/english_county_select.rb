@@ -1,4 +1,4 @@
-# english_countySelect
+# english_county_select
 module ActionView
   module Helpers
     module FormOptionsHelper
@@ -17,127 +17,13 @@ module ActionView
         if priority_counties
           english_county_options += options_for_select(priority_counties, selected)
           english_county_options += "<option value=\"\" disabled=\"disabled\">-------------</option>\n"
-          # prevents selected from being included twice in the HTML which causes
-          # some browsers to select the second selected option (not priority)
-          # which makes it harder to select an alternative priority english_county
           selected=nil if priority_counties.include?(selected)
         end
 
-        return english_county_options + grouped_options_for_select(COUNTIES, selected, true).html_safe
+        return (english_county_options + grouped_options_for_select(COUNTIES, selected)).html_safe
       end
       # All the countries included in the english_county_options output.
-      COUNTIES = [
-                  ["England", [
-                      "Avon",
-                      "Bedfordshire",
-                      "Berkshire",
-                      "Buckinghamshire",
-                      "Cambridgeshire",
-                      "Cheshire",
-                      "Cleveland",
-                      "Cornwall",
-                      "Cumbria",
-                      "Derbyshire",
-                      "Devon",
-                      "Dorset",
-                      "Durham",
-                      "East Sussex",
-                      "Essex",
-                      "Gloucestershire",
-                      "Hampshire",
-                      "Herefordshire",
-                      "Hertfordshire",
-                      "Isle of Wight",
-                      "Kent",
-                      "Lancashire",
-                      "Leicestershire",
-                      "Lincolnshire",
-                      "London",
-                      "Merseyside",
-                      "Middlesex",
-                      "Norfolk",
-                      "Northamptonshire",
-                      "Northumberland",
-                      "North Humberside",
-                      "North Yorkshire",
-                      "Nottinghamshire",
-                      "Oxfordshire",
-                      "Rutland",
-                      "Shropshire",
-                      "Somerset",
-                      "South Humberside",
-                      "South Yorkshire",
-                      "Staffordshire",
-                      "Suffolk",
-                      "Surrey",
-                      "Tyne and Wear",
-                      "Warwickshire",
-                      "West Midlands",
-                      "West Sussex",
-                      "West Yorkshire",
-                      "Wiltshire",
-                      "Worcestershire"
-                    ],
-                  ["Wales",
-                    [
-                      "Clwyd",
-                      "Dyfed",
-                      "Gwent",
-                      "Gwynedd",
-                      "Mid Glamorgan",
-                      "Powys",
-                      "South Glamorgan",
-                      "West Glamorgan"
-                    ]
-                  ],
-                  ["Scotland",
-                    [
-                      "Aberdeenshire",
-                      "Angus",
-                      "Argyll",
-                      "Ayrshire",
-                      "Banffshire",
-                      "Berwickshire",
-                      "Bute",
-                      "Caithness",
-                      "Clackmannanshire",
-                      "Dumfriesshire",
-                      "Dunbartonshire",
-                      "East Lothian",
-                      "Fife",
-                      "Inverness-shire",
-                      "Kincardineshire",
-                      "Kinross-shire",
-                      "Kirkcudbrightshire",
-                      "Lanarkshire",
-                      "Midlothian",
-                      "Moray",
-                      "Nairnshire",
-                      "Orkney",
-                      "Peeblesshire",
-                      "Perthshire",
-                      "Renfrewshire",
-                      "Ross-shire",
-                      "Roxburghshire",
-                      "Selkirkshire",
-                      "Shetland",
-                      "Stirlingshire",
-                      "Sutherland",
-                      "West Lothian",
-                      "Wigtownshire"
-                    ]
-                  ],
-                  ["Northern Ireland",
-                    [
-                      "Antrim",
-                      "Armagh",
-                      "Down",
-                      "Fermanagh",
-                      "Londonderry",
-                      "Tyrone"
-                    ]
-                  ]
-] ] unless const_defined?("COUNTIES")
+      COUNTIES = [ ["England", ["Avon", "Bedfordshire", "Berkshire", "Buckinghamshire", "Cambridgeshire", "Cheshire", "Cleveland", "Cornwall", "Cumbria", "Derbyshire", "Devon", "Dorset", "Durham", "East Sussex", "Essex", "Gloucestershire", "Hampshire", "Herefordshire", "Hertfordshire", "Isle of Wight", "Kent", "Lancashire", "Leicestershire", "Lincolnshire", "London", "Merseyside", "Middlesex", "Norfolk", "Northamptonshire", "Northumberland", "North Humberside", "North Yorkshire", "Nottinghamshire", "Oxfordshire", "Rutland", "Shropshire", "Somerset", "South Humberside", "South Yorkshire", "Staffordshire", "Suffolk", "Surrey", "Tyne and Wear", "Warwickshire", "West Midlands", "West Sussex", "West Yorkshire", "Wiltshire", "Worcestershire"]], ["Wales", ["Clwyd", "Dyfed", "Gwent", "Gwynedd", "Mid Glamorgan", "Powys", "South Glamorgan", "West Glamorgan"] ], ["Scotland", ["Aberdeenshire", "Angus", "Argyll", "Ayrshire", "Banffshire", "Berwickshire", "Bute", "Caithness", "Clackmannanshire", "Dumfriesshire", "Dunbartonshire", "East Lothian", "Fife", "Inverness-shire", "Kincardineshire", "Kinross-shire", "Kirkcudbrightshire", "Lanarkshire", "Midlothian", "Moray", "Nairnshire", "Orkney", "Peeblesshire", "Perthshire", "Renfrewshire", "Ross-shire", "Roxburghshire", "Selkirkshire", "Shetland", "Stirlingshire", "Sutherland", "West Lothian", "Wigtownshire"] ], ["Northern Ireland", ["Antrim", "Armagh", "Down", "Fermanagh", "Londonderry", "Tyrone"] ] ] unless const_defined?("COUNTIES")
     end
     
     class InstanceTag
