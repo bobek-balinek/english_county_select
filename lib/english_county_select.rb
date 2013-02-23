@@ -7,7 +7,7 @@ module ActionView
         InstanceTag.new(object, method, self, options.delete(:object)).to_english_county_select_tag(priority_counties, options, html_options)
       end
       # Returns a string of option tags for pretty much any english_county in the world. Supply a english_county name as +selected+ to
-      # have it marked as the selected option tag. You can also supply an array of countries as +priority_counties+, so
+      # have it marked as the selected option tag. You can also supply an array of counties as +priority_counties+, so
       # that they will be listed above the rest of the (long) list.
       #
       # NOTE: Only the option tags are returned, you have to wrap this call in a regular HTML select tag.
@@ -22,10 +22,10 @@ module ActionView
 
         return (english_county_options + grouped_options_for_select(COUNTIES, selected)).html_safe
       end
-      # All the countries included in the english_county_options output.
-      COUNTIES = [ ["England", ["Avon", "Bedfordshire", "Berkshire", "Buckinghamshire", "Cambridgeshire", "Cheshire", "Cleveland", "Cornwall", "Cumbria", "Derbyshire", "Devon", "Dorset", "Durham", "East Sussex", "Essex", "Gloucestershire", "Hampshire", "Herefordshire", "Hertfordshire", "Isle of Wight", "Kent", "Lancashire", "Leicestershire", "Lincolnshire", "London", "Merseyside", "Middlesex", "Norfolk", "Northamptonshire", "Northumberland", "North Humberside", "North Yorkshire", "Nottinghamshire", "Oxfordshire", "Rutland", "Shropshire", "Somerset", "South Humberside", "South Yorkshire", "Staffordshire", "Suffolk", "Surrey", "Tyne and Wear", "Warwickshire", "West Midlands", "West Sussex", "West Yorkshire", "Wiltshire", "Worcestershire"]], ["Wales", ["Clwyd", "Dyfed", "Gwent", "Gwynedd", "Mid Glamorgan", "Powys", "South Glamorgan", "West Glamorgan"] ], ["Scotland", ["Aberdeenshire", "Angus", "Argyll", "Ayrshire", "Banffshire", "Berwickshire", "Bute", "Caithness", "Clackmannanshire", "Dumfriesshire", "Dunbartonshire", "East Lothian", "Fife", "Inverness-shire", "Kincardineshire", "Kinross-shire", "Kirkcudbrightshire", "Lanarkshire", "Midlothian", "Moray", "Nairnshire", "Orkney", "Peeblesshire", "Perthshire", "Renfrewshire", "Ross-shire", "Roxburghshire", "Selkirkshire", "Shetland", "Stirlingshire", "Sutherland", "West Lothian", "Wigtownshire"] ], ["Northern Ireland", ["Antrim", "Armagh", "Down", "Fermanagh", "Londonderry", "Tyrone"] ] ] unless const_defined?("COUNTIES")
+      # All the counties included in the english_county_options output.
+      COUNTIES = [ ["England", [ "Avon", "Bedfordshire", "Berkshire", "Borders", "Bristol", "Buckinghamshire", "Cambridgeshire", "Channel Islands", "Cheshire", "Cleveland", "Cornwall", "Cumbria", "Derbyshire", "Devon", "Dorset", "Durham", "East Riding of Yorkshire", "East Sussex", "Essex", "Gloucestershire", "Greater Manchester", "Hampshire", "Herefordshire", "Hertfordshire", "Humberside", "Isle of Man", "Isle of Wight", "Isles of Scilly", "Kent", "Lancashire", "Leicestershire", "Lincolnshire", "London", "Merseyside", "Middlesex", "Norfolk", "North Yorkshire", "Northamptonshire", "Northumberland", "Nottinghamshire", "Oxfordshire", "Rutland", "Shropshire", "Somerset", "South Yorkshire", "Staffordshire", "Suffolk", "Surrey", "Tyne and Wear", "Warwickshire", "West Midlands", "West Sussex", "West Yorkshire", "Wiltshire", "Worcestershire" ] ], ["Wales", [ "Blaenau Gwent", "Bridgend", "Caerphilly", "Cardiff", "Ceredigion", "Conwy", "Denbighshire", "Flintshire", "Gwynedd", "Isle of Anglesey", "Merthyr Tydfil", "Monmouthshire", "Neath Port Talbot", "Newport", "Pembrokeshire", "Powys", "Rhondda Cynon Taff", "Swansea", "The Vale of Glamorgan", "Torfaen", "Wrexham" ] ], ["Scotland", [ "Aberdeen City", "Aberdeenshire", "Angus", "Argyll and Bute", "Armagh", "Carmarthenshire", "Clackmannan", "Dumfries and Galloway", "East Ayrshire", "East Dunbartonshire", "East Lothian", "East Renfrewshire", "Edinburgh City", "Falkirk", "Fife", "Glasgow", "Highland", "Inverclyde", "Midlothian", "Moray", "North Ayrshire", "North Lanarkshire", "Orkney", "Perthshire and Kinross", "Renfrewshire", "Roxburghshire", "Shetland", "South Ayrshire", "South Lanarkshire", "Stirling", "West Dunbartonshire", "West Lothian", "Western Isles" ] ], ["Northern Ireland", [ "Antrim", "Down", "Fermanagh", "Londonderry", "Tyrone" ] ] ] unless const_defined?("COUNTIES")
     end
-    
+
     class InstanceTag
       def to_english_county_select_tag(priority_counties, options, html_options)
         html_options = html_options.stringify_keys
@@ -39,7 +39,7 @@ module ActionView
         )
       end
     end
-    
+
     class FormBuilder
       def english_county_select(method, priority_counties = nil, options = {}, html_options = {})
         @template.english_county_select(@object_name, method, priority_counties, options.merge(:object => @object), html_options)

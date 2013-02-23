@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{english_county_select}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Przemyslaw Bobak"]
@@ -13,13 +13,13 @@ Gem::Specification.new do |s|
   s.description = %q{Rails select helper for English Counties}
   s.email = %q{bobak.art@gmail.com}
   s.extra_rdoc_files = [
-    "README"
+    "README.md"
   ]
   s.files = [
-    "README",
-     "VERSION",
-     "init.rb",
-     "lib/english_county_select.rb"
+    "README.md",
+    "VERSION",
+    "init.rb",
+    "lib/english_county_select.rb"
   ]
   s.homepage = %q{https://github.com/bobek-balinek/english_county_select}
   s.rdoc_options = ["--charset=UTF-8"]
